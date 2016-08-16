@@ -1,19 +1,12 @@
-# A Docker image for Bosun
+## A Docker image for Bosun
 - [Bosun homepage](https://bosun.org/)
 - [An image page at Docker Hub](https://hub.docker.com/r/oisis/bosun/)
 
-An example of `docker-compose.yml`:
+### What is Bosun:
+
+Bosun is an open-source, MIT licensed, monitoring and alerting system by Stack Exchange. It has an expressive domain specific language for evaluating alerts and creating detailed notifications. It also lets you test your alerts against history for a faster development experience.
+
+### Run Bosun container:
 ```
-version: '2'
-services:
-  server:
-    image: mkuzmin/bosun
-    volumes:
-      - ./bosun.conf:/bosun.conf:ro
-      - data:/data
-    command: -c /bosun.conf
-    ports:
-      - "8070:8070"
-volumes:
-  data: {}
+docker run -d --name bosun oisis/bosun:latest
 ```
