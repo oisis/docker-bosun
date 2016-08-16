@@ -1,0 +1,11 @@
+version: '2'
+services:
+  bosun:
+    image: oisis/bosun
+    container_name: bosun
+    restart: always
+    volumes:
+      - ./bosun.conf:/bosun.conf:ro
+      - data:/data
+    ports:
+      - "8070:8070"
