@@ -11,8 +11,8 @@ RUN VERSION=0.5.0 \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
-ADD config/bosun.conf.tpl /etc/bosun/bosun.conf.tpl
-ADD scripts/run.sh /run.sh
+COPY config/bosun.conf.tpl /etc/bosun/bosun.conf.tpl
+COPY scripts/run.sh /run.sh
 RUN chmod +x /run.sh
 
 WORKDIR /data
